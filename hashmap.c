@@ -119,7 +119,7 @@ Pair * nextMap(HashMap * map) {
   if(map == NULL || map->size == 0){
     return NULL;
   }
-  int index = map->current;
+  int index = map->current + 1;
   
   while(map->buckets[index] == NULL || map->buckets[index]->key == NULL){
     index++;
