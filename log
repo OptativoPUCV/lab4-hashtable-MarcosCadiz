@@ -78,3 +78,17 @@ hashmap.c:83:6: error: suggest parentheses around assignment used as truth value
 cc1: all warnings being treated as errors
 Compilation failed
 de512b0
+Thu 25 Apr 2024 12:57:04 AM UTC: 
+ hashmap.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:83:10: error: assignment to ‘HashMap *’ {aka ‘struct HashMap *’} from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+   83 |   if(map = NULL || key == NULL) return NULL;
+      |          ^
+hashmap.c:83:6: error: suggest parentheses around assignment used as truth value [-Werror=parentheses]
+   83 |   if(map = NULL || key == NULL) return NULL;
+      |      ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+cb2c654
