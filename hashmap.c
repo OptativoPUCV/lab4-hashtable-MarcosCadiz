@@ -116,7 +116,7 @@ Pair * firstMap(HashMap * map) {
 }
 
 Pair * nextMap(HashMap * map) {
-  if(map == NULL){
+  if(map == NULL || map->size == 0){
     return NULL;
   }
   int index = map->current + 1;
