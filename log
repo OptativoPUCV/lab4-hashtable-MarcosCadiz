@@ -2,3 +2,33 @@ Wed 24 Apr 2024 06:21:46 PM UTC:
  tests:  0|6
 total_score: 0/70
 31a1517
+Thu 25 Apr 2024 12:41:41 AM UTC: 
+ hashmap.c | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+In file included from hashmap.c:6,
+                 from test.c:4:
+hashmap.h: In function ‘createMap’:
+hashmap.h:21:49: error: invalid application of ‘sizeof’ to incomplete type ‘HashMap’
+   21 |     HashMap * mapa = (HashMap *) malloc (sizeof(HashMap));
+      |                                                 ^~~~~~~
+hashmap.h:22:9: error: invalid use of incomplete typedef ‘HashMap’
+   22 |     mapa->buckets = (Pair **) calloc (capacity, sizeof(Pair *));
+      |         ^~
+hashmap.h:23:9: error: invalid use of incomplete typedef ‘HashMap’
+   23 |     mapa->capacity = capacity;
+      |         ^~
+hashmap.h:24:9: error: invalid use of incomplete typedef ‘HashMap’
+   24 |     mapa->current = -1;
+      |         ^~
+In file included from test.c:4:
+hashmap.c: At top level:
+hashmap.c:54:11: error: redefinition of ‘createMap’
+   54 | HashMap * createMap(long capacity) {
+      |           ^~~~~~~~~
+In file included from hashmap.c:6,
+                 from test.c:4:
+hashmap.h:20:11: note: previous definition of ‘createMap’ with type ‘HashMap *(long int)’ {aka ‘struct HashMap *(long int)’}
+   20 | HashMap * createMap(long capacity){
+      |           ^~~~~~~~~
+Compilation failed
+f5eeab0
