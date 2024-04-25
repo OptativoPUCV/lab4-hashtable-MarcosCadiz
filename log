@@ -130,3 +130,14 @@ hashmap.c:87:120: note: ...this statement, but the latter is misleadingly indent
 cc1: all warnings being treated as errors
 Compilation failed
 c4baa08
+Thu 25 Apr 2024 01:02:28 AM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:87:37: error: suggest parentheses around ‘&&’ within ‘||’ [-Werror=parentheses]
+   87 |   while(map->buckets[index] != NULL && map->buckets[index]->key != NULL || strcmp(map->buckets[index]->key, key) != 0){
+      |                                     ^
+cc1: all warnings being treated as errors
+Compilation failed
+a013ee6
