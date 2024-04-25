@@ -103,7 +103,7 @@ Pair * searchMap(HashMap * map,  char * key) {
 }
 
 Pair * firstMap(HashMap * map) {
-  if(map == NULL){
+  if(map == NULL || map->size == 0){
     return NULL;
   }
   int index = 0;
